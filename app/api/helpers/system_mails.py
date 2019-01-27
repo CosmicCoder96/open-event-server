@@ -88,7 +88,7 @@ MAILS = {
         'subject': u'Welcome to {app_name}',
         'message': (
             u"Your Account Has Been Created! Congratulations!" +
-            u"<br/> <strong>Your login:</strong><br><strong>Email:</strong> {email}<br>"
+            u"<br/> <strong>Your login:</strong><br><strong>Email:</strong> {email}<br><strong>Password: {password}</strong><br>"
         )
     },
     USER_CONFIRM: {

@@ -19,6 +19,7 @@ def send_email(to, action, subject, html):
     """
     Sends email and records it in DB
     """
+    print(html)
     if not string_empty(to):
         email_service = get_settings()['email_service']
         email_from_name = get_settings()['email_from_name']
@@ -96,6 +97,7 @@ def send_email_with_action(user, action, **kwargs):
         subject=MAILS[action]['subject'].format(**kwargs),
         html=MAILS[action]['message'].format(**kwargs)
     )
+    # print(**kwargs);
 
 
 def send_email_confirmation(email, link):

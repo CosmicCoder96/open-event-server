@@ -30,7 +30,7 @@ def upgrade():
                                          "event preferences and provide you with a customized experience. "
                                          "By closing this banner or by continuing to use the site, you agree. "
                                          "For more information please review our cookie policy.",
-                        'cookie_policy_link': 'http://next.cookie-policy.eventyay.com'}))
+                        'cookie_policy_link': 'http://eventyay.com/cookie-policy'}))
 
 
 def downgrade():

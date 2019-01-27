@@ -49,7 +49,7 @@ class UserSchema(UserSchemaPublic):
     twitter_url = fields.Url(allow_none=True)
     instagram_url = fields.Url(allow_none=True)
     google_plus_url = fields.Url(allow_none=True)
-    password = fields.Str(required=True, load_only=True)
+    password = fields.Str(allow_none=True, load_only=True)
     is_super_admin = fields.Boolean(dump_only=True)
     is_admin = fields.Boolean()
     facebook_id = fields.Integer(dump_only=True)
