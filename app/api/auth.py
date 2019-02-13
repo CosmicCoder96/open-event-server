@@ -26,8 +26,7 @@ from app.models.user import User
 auth_routes = Blueprint('auth', __name__, url_prefix='/v1/auth')
 api_key = TwitterOAuth.get_client_id()
 api_secret = TwitterOAuth.get_client_secret()
-twitter_blueprint = make_twitter_blueprint(api_key=api_key, api_secret=api_secret)
-app.register_blueprint(twitter_blueprint, url_prefix='/twitter_login')
+twitter_routes = make_twitter_blueprint(api_key=api_key, api_secret=api_secret)
 
 
 @auth_routes.route('/oauth/<provider>', methods=['GET'])
@@ -174,6 +173,7 @@ def login_user(provider, auth_code):
             message="No support for {}".format(provider)), 200)
     response = requests.post(provider_class.get_token_uri(), params=payload)
     return make_response(jsonify(token=response.json()), 200)
+
 
 @auth_routes.route('/verify-email', methods=['POST'])
 def verify_email():
