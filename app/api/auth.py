@@ -24,9 +24,6 @@ from app.models.notification import PASSWORD_CHANGE as PASSWORD_CHANGE_NOTIF
 from app.models.user import User
 
 auth_routes = Blueprint('auth', __name__, url_prefix='/v1/auth')
-api_key = TwitterOAuth.get_client_id()
-api_secret = TwitterOAuth.get_client_secret()
-twitter_routes = make_twitter_blueprint(api_key=api_key, api_secret=api_secret)
 
 
 @auth_routes.route('/oauth/<provider>', methods=['GET'])

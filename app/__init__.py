@@ -116,7 +116,7 @@ def create_app():
     # development api
     with app.app_context():
         from app.api.admin_statistics_api.events import event_statistics
-        from app.api.auth import auth_routes, twitter_routes
+        from app.api.auth import auth_routes
         from app.api.attendees import attendee_misc_routes
         from app.api.bootstrap import api_v1
         from app.api.celery_tasks import celery_routes
@@ -140,7 +140,7 @@ def create_app():
         app.register_blueprint(attendee_misc_routes)
         app.register_blueprint(order_misc_routes)
         app.register_blueprint(role_invites_misc_routes)
-        app.register_blueprint(twitter_routes, url_prefix='/twitter_login')
+        # app.register_blueprint(twitter_routes, url_prefix='/twitter_login')
 
     sa.orm.configure_mappers()
 
